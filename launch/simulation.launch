@@ -1,0 +1,9 @@
+<launch>
+    <rosparam file="$(find jaguarbot)/config/controllers.yaml" command="load"/>
+
+    <include file="$(find jaguarbot)/launch/my_world.launch"/>
+    <include file="$(find jaguarbot)/launch/spawn.launch"/>
+
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/jaguarbot"
+    args="left_joint_1_controller left_joint_2_controller left_joint_3_controller right_joint_1_controller right_joint_2_controller right_joint_3_controller"/>
+</launch>
