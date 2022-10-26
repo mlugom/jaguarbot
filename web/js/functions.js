@@ -1,15 +1,26 @@
-function publishCmdVel(){
-    cmdVel.publish(twist);
+function publishCmdVel(twist){
+    //cmdVel.publish(twist);
+    console.log(twist);
 }
 
 function moveForward(){
-    var x_vel = 5;
-    twist.linear.x = x_vel;
+    var twist = new ROSLIB.Message({
+        linear: {
+            x: 5,
+            y: 0,
+            z: 0
+        },
+        angular: {
+            x: 0,
+            y: 0,
+            z: 0
+        }
+    });
     publishCmdVel(twist); 
 }
 
 function moveBackward(){
-    var twist = new ROSLIB.message({
+    var twist = new ROSLIB.Message({
         linear: {
             x: -5,
             y: 0,
@@ -25,7 +36,7 @@ function moveBackward(){
 }
 
 function turnLeft(){
-    var twist = new ROSLIB.message({
+    var twist = new ROSLIB.Message({
         linear: {
             x: 0,
             y: 0,
@@ -41,7 +52,7 @@ function turnLeft(){
 }
 
 function turnRight(){
-    var twist = new ROSLIB.message({
+    var twist = new ROSLIB.Message({
         linear: {
             x: 0,
             y: 0,
@@ -54,6 +65,26 @@ function turnRight(){
         }
     });
     publishCmdVel(twist);
+}
+
+function stop(){
+    var twist = new ROSLIB.Message({
+        linear: {
+            x: 0,
+            y: 0,
+            z: 0
+        },
+        angular: {
+            x: 0,
+            y: 0,
+            z: 0
+        }
+    });
+    publishCmdVel(twist);
+}
+
+function sleep(ms){
+    return new Promise(resolve => setTimeout(resolve,ms));
 }
 
 var ros = new ROSLIB.Ros({
@@ -73,19 +104,6 @@ ros.on('close',function(){
     console.log('Connection terminated.');
 });
 
-// Cmd_vel message published
-var twist = new ROSLIB.Message({
-    linear: {
-        x: 0,
-        y: 0,
-        z: 0
-    },
-    angular: {
-        x: 0,
-        y: 0,
-        z: 0
-    }
-});
 
 var cmdVel = new ROSLIB.Topic({
     ros: ros,
@@ -98,7 +116,9 @@ var forwardButton = document.getElementById('forward');
 var backwardButton = document.getElementById('backward');
 var leftButton = document.getElementById('left');
 var rightButton = document.getElementById('right');
+/*
 while(true){
-    
-}
+    console.log('Hola');
+    sleep(1000);
+}*/
 
