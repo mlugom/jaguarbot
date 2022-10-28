@@ -6,7 +6,7 @@ function publishCmdVel(twist){
 function moveForward(){
     var twist = new ROSLIB.Message({
         linear: {
-            x: 5,
+            x: 0.5,
             y: 0,
             z: 0
         },
@@ -22,7 +22,7 @@ function moveForward(){
 function moveBackward(){
     var twist = new ROSLIB.Message({
         linear: {
-            x: -5,
+            x: -0.5,
             y: 0,
             z: 0
         },
@@ -45,7 +45,7 @@ function turnLeft(){
         angular: {
             x: 0,
             y: 0,
-            z: 0.8
+            z: 2
         }
     });
     publishCmdVel(twist);
@@ -56,7 +56,7 @@ function turnRight(){
         linear: {
             x: 0,
             y: 0,
-            z: 0
+            z: 2
         },
         angular: {
             x: 0,
