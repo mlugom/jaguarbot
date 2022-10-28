@@ -1,6 +1,6 @@
 function publishCmdVel(twist){
-    //cmdVel.publish(twist);
-    console.log(twist);
+    cmdVel.publish(twist);
+    //console.log(twist);
 }
 
 function moveForward(){
@@ -61,7 +61,7 @@ function turnRight(){
         angular: {
             x: 0,
             y: 0,
-            z: 0.8
+            z: -0.8
         }
     });
     publishCmdVel(twist);
