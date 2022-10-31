@@ -83,6 +83,12 @@ function stop(){
     publishCmdVel(twist);
 }
 
+function takePhoto(){
+    var msg = 'Snap';
+
+    takePhotoTopic.publish(msg);
+}
+
 function sleep(ms){
     return new Promise(resolve => setTimeout(resolve,ms));
 }
@@ -109,6 +115,12 @@ var cmdVel = new ROSLIB.Topic({
     ros: ros,
     name: '/cmd_vel',
     messageType: 'geometry_msgs/Twist'
+});
+
+var takePhotoTopic = new ROSLIB.Topic({
+    ros: ros,
+    name: '/take_photo',
+    messageType: 'std_msgs/String'
 });
 
 // Buttons
