@@ -84,7 +84,9 @@ function stop(){
 }
 
 function takePhoto(){
-    var msg = 'Snap';
+    var msg = new ROSLIB.Message({
+        data: 'Snap'
+    })
 
     takePhotoTopic.publish(msg);
 }
