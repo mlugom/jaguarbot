@@ -14,6 +14,7 @@ def initPins():
     GPIO.setmode(GPIO.BCM)    
     signals = [signalA_left,signalB_left,signalA_right,signalB_right]
     GPIO.setup(signals,GPIO.OUT)
+    GPIO.output(signals,False)
 
 def callback(data):
     omegaLeft,omegaRight = inverseKinematics(data)
@@ -25,8 +26,6 @@ def callback(data):
     GPIO.output(signalB_left,pinB_left)
     GPIO.output(signalA_right,pinA_right)
     GPIO.output(signalB_right,pinB_right)
-    
-
 
 
 def motorCommander():
