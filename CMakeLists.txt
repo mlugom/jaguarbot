@@ -162,6 +162,8 @@ include_directories(
  catkin_install_python(PROGRAMS
    scripts/motorCommanderSim.py
    scripts/triggererSim.py
+   scripts/motorCommander.py
+   scripts/triggerer.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
 
