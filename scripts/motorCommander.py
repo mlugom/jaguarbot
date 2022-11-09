@@ -17,6 +17,7 @@ def initPins():
     GPIO.output(signals,False)
 
 def callback(data):
+    rospy.loginfo(data)
     omegaLeft,omegaRight = inverseKinematics(data)
     # pinX_left and pinX_right correspond to the boolean value to be assigned to the pins.
     pinA_left,pinB_left = setPins(omegaRight)
@@ -31,7 +32,7 @@ def callback(data):
 def motorCommander():
     rospy.init_node('motorCommander',anonymous=True)
 
-    rospy.Subscriber('cmd_vel',Twist,callback)
+    rospy.Subscriber('cmd_vel_rpi',Twist,callback)
 
     rospy.spin()
 
