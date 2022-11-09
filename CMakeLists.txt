@@ -164,6 +164,8 @@ include_directories(
    scripts/triggererSim.py
    scripts/motorCommander.py
    scripts/triggerer.py
+   scripts/talker.py
+   scripts/listener.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
 
