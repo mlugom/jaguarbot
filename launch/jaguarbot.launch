@@ -1,4 +1,4 @@
 <launch>
-    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
     <node name="motorCommander" pkg="jaguarbot" type="motorCommander.py"/>
+    <node name="triggerer" pkg="jaguarbot" type="triggererSim.py"/>
 </launch>
