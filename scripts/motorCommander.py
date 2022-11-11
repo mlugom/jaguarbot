@@ -20,7 +20,7 @@ def callback(data):
     rospy.loginfo(data)
     omegaLeft,omegaRight = inverseKinematics(data)
     # pinX_left and pinX_right correspond to the boolean value to be assigned to the pins.
-    pinA_left,pinB_left = setPins(omegaRight)
+    pinA_left,pinB_left = setPins(omegaLeft)
     pinA_right,pinB_right = setPins(omegaRight)
 
     GPIO.output(signalA_left,pinA_left)
