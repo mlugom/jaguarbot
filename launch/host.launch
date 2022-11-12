@@ -1,0 +1,5 @@
+<launch>
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
+    <node name="motorBridge" pkg="jaguarbot" type="motorBridge.py"/>
+    <node name="hoster" pkg="jaguarbot" type="hostApp.py"/>
+</launch>
