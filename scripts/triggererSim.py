@@ -22,6 +22,7 @@ def takePhoto():
         basename = 'photo'
         imName = imgNameGenerator(path,basename)
         cv2.imwrite(f'{path}/{imName}',img)
+        rospy.loginfo('It writes img')
 
     cam.release()
 

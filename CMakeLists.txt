@@ -167,6 +167,7 @@ include_directories(
    scripts/talker.py
    scripts/listener.py
    scripts/motorBridge.py
+   scripts/hostApp.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
 
