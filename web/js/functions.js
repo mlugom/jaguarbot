@@ -97,9 +97,9 @@ function sleep(ms){
 
 var ros = new ROSLIB.Ros({
     // Edit this URL according to the machine which runs ROS
-    //url: 'ws://localhost:9090'
-    url: 'ws://192.168.5.106:9090'
-    //url: 'ws://10.42.0.1:9090'
+    url: 'ws://localhost:9090'
+    //url: 'ws://192.168.5.106:9090'
+    
 });
 
 
