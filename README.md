@@ -88,4 +88,4 @@ Once you have installed and sourced this package **both** on your machine and yo
 
 ## Videos:
 
-Upload pending...
+[Functionality video](https://youtu.be/qUHUN6ycA-Q)
